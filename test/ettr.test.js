@@ -7,7 +7,8 @@ var buildObj = function () {
       b: {
         c: 1,
         d: 2,
-      }
+        'connect.sid': 3,
+      },
     }
   });
 };
@@ -63,6 +64,14 @@ describe('test/ettr.test.js', function () {
     it('should parse [] str', function () {
       var str = '[a][b][c]';
       ettr.parseAttr(str).should.eql(expect);
+
+      var str = '[a][b][connect.sid]';
+      ettr.parseAttr(str).should.eql(['a', 'b', 'connect.sid']);
+
+      var str = '[a][b][ connect.sid ]';
+      ettr.parseAttr(str).should.eql(['a', 'b', 'connect.sid']);
+
+
     });
 
     it('should parse [] and dot-connected str', function () {

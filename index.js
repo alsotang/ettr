@@ -1,10 +1,19 @@
-var splitChar = /\.|'|"|\[|\]|\s/;
 function parseAttr(attr) {
   if (Array.isArray(attr)) {
     return attr;
   }
   if (typeof attr === 'string') {
-    return attr.split(splitChar).filter(String);
+    var attrs = [];
+    if (attr[0] !== '[') {
+      attr = '.' + attr;
+    }
+    var re = /\[['"]?([^\]]+?)['"]?\]|\.\s*(\w+)?/g;
+    var match;
+    while ((match = re.exec(attr)) !== null) {
+      var _attr = match[1] || match[2];
+      _attr && attrs.push(_attr.trim());
+    }
+    return attrs;
   }
 }
 exports.parseAttr = parseAttr;
