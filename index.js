@@ -1,4 +1,4 @@
-var splitChar = /\.|'|"|\[|\]/;
+var splitChar = /\.|'|"|\[|\]|\s/;
 function parseAttr(attr) {
   if (Array.isArray(attr)) {
     return attr;

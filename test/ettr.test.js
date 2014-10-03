@@ -75,6 +75,9 @@ describe('test/ettr.test.js', function () {
       var str = 'a["b"].c';
       ettr.parseAttr(str).should.eql(expect);
 
+      var str = 'a ["b"]. c';
+      ettr.parseAttr(str).should.eql(expect);
+
       var str = 'a["b"][\'c\']';
       ettr.parseAttr(str).should.eql(expect);
     });
