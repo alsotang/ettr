@@ -17,6 +17,9 @@ describe('test/ettr.test.js', function () {
     var obj = buildObj();
     ettr.get(obj, 'a.b.c')
       .should.equal(1);
+
+    ettr.get(obj, 'a[b]["c"]')
+      .should.equal(1);
   });
 
   it('should set attr', function () {
