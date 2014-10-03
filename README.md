@@ -1,3 +1,6 @@
+[![Build Status](https://travis-ci.org/alsotang/ettr.svg)](https://travis-ci.org/alsotang/ettr) [![Coverage Status](https://img.shields.io/coveralls/alsotang/ettr.svg)](https://coveralls.io/r/alsotang/ettr)
+
+
 install
 ==
 
