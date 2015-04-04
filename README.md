@@ -47,6 +47,17 @@ ettr.incr(obj, 'a.b.z', 1, 100);
 obj.a.b.z.should.equal(102);
 ```
 
+benchmark
+==
+
+see `benchmark.js`
+
+```
+#ettr x 800,747 ops/sec ±2.25% (93 runs sampled)
+#eval x 2,918,739 ops/sec ±2.65% (87 runs sampled)
+Fastest is #eval
+```
+
 license
 ==
 
